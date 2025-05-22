@@ -49,7 +49,7 @@ const Homepage = () => {
           <div style={styles.card}>✏️ Joki Penulisan Laporan & Editing</div>
           <div style={styles.card}>💻 Joki Coding & Proyek IT</div>
           <div style={styles.card}>📝 Joki jasa ketik dan tulisan tangan</div>
-          <div style={styles.card}>🔍 joki pengecekatan turnitin dan edit parafrase</div>
+          <div style={styles.card}>🔍 joki cek turnitin no repository dan parafrase turnitin</div>
         </div>
       </section>
 
