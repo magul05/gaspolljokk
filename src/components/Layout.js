@@ -9,7 +9,7 @@ const Layout = () => {
       <Outlet /> {/* Tempat halaman ditampilkan */}
       {/* Chatbot WhatsApp tetap muncul di semua halaman */}
       <a
-        href="https://wa.me/085702088994?text=Halo%20admin,%20saya%20butuh%20bantuan%20joki%20kampus."
+        href="https://wa.me/6285702088994?text=Halo%20admin,%20saya%20butuh%20bantuan%20joki%20kampus."
         target="_blank"
         rel="noopener noreferrer"
         style={{
