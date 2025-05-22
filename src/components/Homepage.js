@@ -42,16 +42,67 @@ const Homepage = () => {
       </section>
 
       {/* Layanan */}
-      <section style={styles.services} id="layanan">
-        <h2 style={styles.sectionTitle}>💼 Layanan Kami</h2>
-        <div style={styles.cardContainer}>
-          <div style={styles.card}>📘 Joki Tugas Harian</div>
-          <div style={styles.card}>✏️ Joki Penulisan Laporan & Editing</div>
-          <div style={styles.card}>💻 Joki Coding & Proyek IT</div>
-          <div style={styles.card}>📝 Joki jasa ketik dan tulisan tangan</div>
-          <div style={styles.card}>🔍 joki cek turnitin no repository dan parafrase turnitin</div>
-        </div>
-      </section>
+     <section style={styles.services} id="layanan">
+  <h2 style={styles.sectionTitle}>💼 Layanan Kami</h2>
+  <div style={styles.cardContainer}>
+    <button
+      style={styles.card}
+      onClick={() =>
+        window.open(
+          "https://wa.me/6285702088994?text=Halo%2C+saya+ingin+pakai+Joki+Tugas+Harian",
+          "_blank"
+        )
+      }
+    >
+      📘 Joki Tugas Harian
+    </button>
+    <button
+      style={styles.card}
+      onClick={() =>
+        window.open(
+          "https://wa.me/6285702088994?text=Halo%2C+saya+butuh+Joki+Penulisan+Laporan+dan+Editing",
+          "_blank"
+        )
+      }
+    >
+      ✏️ Joki Penulisan Laporan & Editing
+    </button>
+    <button
+      style={styles.card}
+      onClick={() =>
+        window.open(
+          "https://wa.me/6285702088994?text=Halo%2C+saya+ingin+pakai+Joki+Coding+%26+Proyek+IT",
+          "_blank"
+        )
+      }
+    >
+      💻 Joki Coding & Proyek IT
+    </button>
+    <button
+      style={styles.card}
+      onClick={() =>
+        window.open(
+          "https://wa.me/6285702088994?text=Halo%2C+saya+perlu+Jasa+Ketik+dan+Tulisan+Tangan",
+          "_blank"
+        )
+      }
+    >
+      📝 Joki jasa ketik dan tulisan tangan
+    </button>
+    <button
+      style={styles.card}
+      onClick={() =>
+        window.open(
+          "https://wa.me/6285702088994?text=Halo%2C+saya+mau+jasa+pengecekan+Turnitin+dan+parafrase",
+          "_blank"
+        )
+      }
+    >
+      🔍 joki pengecekatan turnitin dan edit parafrase
+    </button>
+  </div>
+</section>
+
 
       {/* CTA */}
       <section style={styles.cta} id="pesan">
