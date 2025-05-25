@@ -39,8 +39,7 @@ const Navbar = () => {
 };
 
 const styles = {
-  navbar: {
-  navbar: {
+   navbar: {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
