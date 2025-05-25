@@ -1,9 +1,10 @@
 import React from 'react';
 import Layout from './Layout';
+
 const HargaPage = () => {
   return (
     <div style={styles.container}>
-        <Layout/>
+      <Layout />
       <section style={styles.pricing}>
         <h2 style={styles.title}>💰 Daftar Harga Jasa</h2>
         <p style={styles.subtitle}>Harga terjangkau dengan kualitas terpercaya!</p>
@@ -36,40 +37,44 @@ const HargaPage = () => {
 
 const styles = {
   container: {
-    backgroundColor: '#0b1d3a',
-    color: '#fff',
+    backgroundColor: '#ffffff',
+    color: '#0b1d3a',
     fontFamily: "'Poppins', sans-serif",
     padding: '40px 20px',
     minHeight: '100vh',
+    boxSizing: 'border-box',
   },
   pricing: {
-    maxWidth: 900,
+    maxWidth: 960,
     margin: '0 auto',
     textAlign: 'center',
   },
   title: {
-    fontSize: '2.4rem',
+    fontSize: '2.2rem',
     marginBottom: 10,
+    color: '#0b1d3a',
   },
   subtitle: {
-    color: '#bcd0ea',
+    color: '#3c5472',
     marginBottom: 40,
   },
   cardContainer: {
     display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
     gap: 20,
   },
   card: {
-    backgroundColor: '#14355d',
+    backgroundColor: '#e6f0ff',
     padding: 30,
     borderRadius: 12,
-    boxShadow: '0 4px 12px rgba(0,0,0,0.3)',
+    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.08)',
     textAlign: 'left',
+    transition: 'transform 0.3s',
   },
   cardTitle: {
     fontSize: '1.3rem',
     marginBottom: 10,
+    color: '#0b1d3a',
   },
   cardPrice: {
     fontSize: '1.2rem',
@@ -78,13 +83,13 @@ const styles = {
   },
   cardDesc: {
     fontSize: '0.95rem',
-    color: '#d0e4ff',
+    color: '#0b1d3a',
   },
   note: {
     marginTop: 40,
     fontSize: '0.9rem',
-    color: '#ccc',
-  }
+    color: '#666',
+  },
 };
 
 export default HargaPage;
