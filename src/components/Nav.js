@@ -40,30 +40,34 @@ const Navbar = () => {
 
 const styles = {
   navbar: {
+  navbar: {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: '20px 40px',
-    backgroundColor: '#09172e',
+    padding: '16px 24px',
+    backgroundColor: '#ffffff',
+    color: '#0b1d3a',
     position: 'sticky',
     top: 0,
     zIndex: 10,
-    boxShadow: '0 4px 12px rgba(0,0,0,0.2)',
+    flexWrap: 'wrap',
+    boxShadow: '0 2px 6px rgba(0,0,0,0.05)',
   },
   logo: {
-    fontSize: '1.6rem',
+    fontSize: '1.5rem',
     fontWeight: 'bold',
-    color: '#fff',
+    color: '#0b1d3a',
   },
   navLinks: {
     display: 'flex',
     listStyle: 'none',
-    gap: '20px',
-    margin: 0,
+    gap: '16px',
     padding: 0,
+    margin: 0,
+    flexWrap: 'wrap',
   },
   navLink: {
-    color: '#bcd0ea',
+    color: '#0b1d3a',
     textDecoration: 'none',
     fontSize: '1rem',
   },
