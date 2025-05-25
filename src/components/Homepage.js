@@ -19,7 +19,7 @@ const Homepage = () => {
         <div style={styles.logo}>GaspollJokk</div>
         <ul style={styles.navLinks}>
           <li><a href="#layanan" style={styles.navLink}>Layanan</a></li>
-          <li><a href="harga" style={styles.navLink}>Harga</a></li>
+          <li><a href="#harga" style={styles.navLink}>Harga</a></li>
           <li><a href="#kontak" style={styles.navLink}>Kontak</a></li>
         </ul>
       </nav>
@@ -42,67 +42,66 @@ const Homepage = () => {
       </section>
 
       {/* Layanan */}
-     <section style={styles.services} id="layanan">
-  <h2 style={styles.sectionTitle}>💼 Layanan Kami</h2>
-  <div style={styles.cardContainer}>
-    <button
-      style={styles.card}
-      onClick={() =>
-        window.open(
-          "https://wa.me/6285702088994?text=Halo%2C+saya+ingin+pakai+Joki+Tugas+Harian",
-          "_blank"
-        )
-      }
-    >
-      📘 Joki Tugas Harian
-    </button>
-    <button
-      style={styles.card}
-      onClick={() =>
-        window.open(
-          "https://wa.me/6285702088994?text=Halo%2C+saya+butuh+Joki+Penulisan+Laporan+dan+Editing",
-          "_blank"
-        )
-      }
-    >
-      ✏️ Joki Penulisan Laporan & Editing
-    </button>
-    <button
-      style={styles.card}
-      onClick={() =>
-        window.open(
-          "https://wa.me/6285702088994?text=Halo%2C+saya+ingin+pakai+Joki+Coding+%26+Proyek+IT",
-          "_blank"
-        )
-      }
-    >
-      💻 Joki Coding & Proyek IT
-    </button>
-    <button
-      style={styles.card}
-      onClick={() =>
-        window.open(
-          "https://wa.me/6285702088994?text=Halo%2C+saya+perlu+Jasa+Ketik+dan+Tulisan+Tangan",
-          "_blank"
-        )
-      }
-    >
-      📝 Joki jasa ketik dan tulisan tangan
-    </button>
-    <button
-      style={styles.card}
-      onClick={() =>
-        window.open(
-          "https://wa.me/6285702088994?text=Halo%2C+saya+mau+jasa+pengecekan+Turnitin+dan+parafrase",
-          "_blank"
-        )
-      }
-    >
-      🔍 joki pengecekatan turnitin dan edit parafrase
-    </button>
-  </div>
-</section>
-
+      <section style={styles.services} id="layanan">
+        <h2 style={styles.sectionTitle}>💼 Layanan Kami</h2>
+        <div style={styles.cardContainer}>
+          <button
+            style={styles.card}
+            onClick={() =>
+              window.open(
+                "https://wa.me/6285702088994?text=Halo%2C+saya+ingin+pakai+Joki+Tugas+Harian",
+                "_blank"
+              )
+            }
+          >
+            📘 Joki Tugas Harian
+          </button>
+          <button
+            style={styles.card}
+            onClick={() =>
+              window.open(
+                "https://wa.me/6285702088994?text=Halo%2C+saya+butuh+Joki+Penulisan+Laporan+dan+Editing",
+                "_blank"
+              )
+            }
+          >
+            ✏️ Joki Penulisan Laporan & Editing
+          </button>
+          <button
+            style={styles.card}
+            onClick={() =>
+              window.open(
+                "https://wa.me/6285702088994?text=Halo%2C+saya+ingin+pakai+Joki+Coding+%26+Proyek+IT",
+                "_blank"
+              )
+            }
+          >
+            💻 Joki Coding & Proyek IT
+          </button>
+          <button
+            style={styles.card}
+            onClick={() =>
+              window.open(
+                "https://wa.me/6285702088994?text=Halo%2C+saya+perlu+Jasa+Ketik+dan+Tulisan+Tangan",
+                "_blank"
+              )
+            }
+          >
+            📝 Joki jasa ketik dan tulisan tangan
+          </button>
+          <button
+            style={styles.card}
+            onClick={() =>
+              window.open(
+                "https://wa.me/6285702088994?text=Halo%2C+saya+mau+jasa+pengecekan+Turnitin+dan+parafrase",
+                "_blank"
+              )
+            }
+          >
+            🔍 joki pengecekatan turnitin dan edit parafrase
+          </button>
+        </div>
+      </section>
 
       {/* CTA */}
       <section style={styles.cta} id="pesan">
@@ -140,8 +139,8 @@ const Homepage = () => {
 const styles = {
   container: {
     fontFamily: "'Poppins', sans-serif",
-    backgroundColor: '#0b1d3a',
-    color: '#fff',
+    backgroundColor: '#ffffff',
+    color: '#0b1d3a',
     margin: 0,
     padding: 0,
     overflowX: 'hidden',
@@ -164,15 +163,18 @@ const styles = {
     justifyContent: 'space-between',
     alignItems: 'center',
     padding: '16px 24px',
-    backgroundColor: '#09172e',
+    backgroundColor: '#ffffff',
+    color: '#0b1d3a',
     position: 'sticky',
     top: 0,
     zIndex: 10,
     flexWrap: 'wrap',
+    boxShadow: '0 2px 6px rgba(0,0,0,0.05)',
   },
   logo: {
     fontSize: '1.5rem',
     fontWeight: 'bold',
+    color: '#0b1d3a',
   },
   navLinks: {
     display: 'flex',
@@ -183,26 +185,28 @@ const styles = {
     flexWrap: 'wrap',
   },
   navLink: {
-    color: '#bcd0ea',
+    color: '#0b1d3a',
     textDecoration: 'none',
     fontSize: '1rem',
   },
   hero: {
     padding: '80px 20px',
     textAlign: 'center',
+    backgroundColor: '#ffffff',
   },
   heroTitle: {
     fontSize: '2rem',
     fontWeight: 'bold',
     minHeight: '60px',
+    color: '#0b1d3a',
   },
   heroText: {
     fontSize: '1rem',
-    color: '#bcd0ea',
+    color: '#0b1d3a',
     margin: '20px 0',
   },
   ctaButton: {
-    backgroundColor: '#1e90ff',
+    backgroundColor: '#0b1d3a',
     color: '#fff',
     padding: '12px 28px',
     textDecoration: 'none',
@@ -212,11 +216,12 @@ const styles = {
   services: {
     padding: '60px 20px',
     textAlign: 'center',
-    backgroundColor: '#102c50',
+    backgroundColor: '#ffffff',
   },
   sectionTitle: {
     fontSize: '2rem',
     marginBottom: 30,
+    color: '#0b1d3a',
   },
   cardContainer: {
     display: 'grid',
@@ -226,21 +231,23 @@ const styles = {
     margin: '0 auto',
   },
   card: {
-    backgroundColor: '#14355d',
+    backgroundColor: '#e6f0ff',
     padding: '25px',
     borderRadius: '12px',
-    boxShadow: '0 4px 12px rgba(255, 255, 255, 0.3)',
+    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
     fontWeight: 500,
     transition: '0.3s',
+    color: '#0b1d3a',
   },
   cta: {
     padding: '60px 20px',
-    backgroundColor: '#0f2c4a',
+    backgroundColor: '#ffffff',
     textAlign: 'center',
+    color: '#0b1d3a',
   },
   testimonialSection: {
     padding: '60px 20px',
-    backgroundColor: '#102c50',
+    backgroundColor: '#ffffff',
     textAlign: 'center',
   },
   testimonialContainer: {
@@ -252,11 +259,12 @@ const styles = {
     marginTop: 30,
   },
   testimonialCard: {
-    backgroundColor: '#14355d',
+    backgroundColor: '#e6f0ff',
     padding: '25px',
     borderRadius: '12px',
-    boxShadow: '0 4px 12px rgba(0,0,0,0.3)',
+    boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
     textAlign: 'left',
+    color: '#0b1d3a',
   },
   testimonialText: {
     fontStyle: 'italic',
@@ -265,13 +273,13 @@ const styles = {
   testimonialAuthor: {
     textAlign: 'right',
     fontWeight: 'bold',
-    color: '#bcd0ea',
+    color: '#0b1d3a',
   },
   footer: {
     textAlign: 'center',
     padding: '20px',
-    backgroundColor: '#0a1c38',
-    color: '#aaa',
+    backgroundColor: '#ffffff',
+    color: '#0b1d3a',
   }
 };
 
