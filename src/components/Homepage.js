@@ -19,7 +19,7 @@ const Homepage = () => {
         <div style={styles.logo}>GaspollJokk</div>
         <ul style={styles.navLinks}>
           <li><a href="#layanan" style={styles.navLink}>Layanan</a></li>
-          <li><a href="#harga" style={styles.navLink}>Harga</a></li>
+          <li><a href="harga" style={styles.navLink}>Harga</a></li>
           <li><a href="#kontak" style={styles.navLink}>Kontak</a></li>
         </ul>
       </nav>
