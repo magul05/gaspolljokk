@@ -1,7 +1,17 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Typewriter } from 'react-simple-typewriter';
 
 const Homepage = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <div style={styles.container}>
       {/* Tombol WhatsApp */}
@@ -15,7 +25,11 @@ const Homepage = () => {
       </a>
 
       {/* Navbar */}
-      <nav style={styles.navbar}>
+      <nav style={{
+        ...styles.navbar,
+        boxShadow: isScrolled ? '0 2px 10px rgba(0, 0, 0, 0.1)' : 'none',
+        transition: 'box-shadow 0.3s ease',
+      }}>
         <div style={styles.logo}>GaspollJokk</div>
         <ul style={styles.navLinks}>
           <li><a href="#layanan" style={styles.navLink}>Layanan</a></li>
@@ -45,61 +59,21 @@ const Homepage = () => {
       <section style={styles.services} id="layanan">
         <h2 style={styles.sectionTitle}>💼 Layanan Kami</h2>
         <div style={styles.cardContainer}>
-          <button
-            style={styles.card}
-            onClick={() =>
-              window.open(
-                "https://wa.me/6285702088994?text=Halo%2C+saya+ingin+pakai+Joki+Tugas+Harian",
-                "_blank"
-              )
-            }
-          >
-            📘 Joki Tugas Harian
-          </button>
-          <button
-            style={styles.card}
-            onClick={() =>
-              window.open(
-                "https://wa.me/6285702088994?text=Halo%2C+saya+butuh+Joki+Penulisan+Laporan+dan+Editing",
-                "_blank"
-              )
-            }
-          >
-            ✏️ Joki Penulisan Laporan & Editing
-          </button>
-          <button
-            style={styles.card}
-            onClick={() =>
-              window.open(
-                "https://wa.me/6285702088994?text=Halo%2C+saya+ingin+pakai+Joki+Coding+%26+Proyek+IT",
-                "_blank"
-              )
-            }
-          >
-            💻 Joki Coding & Proyek IT
-          </button>
-          <button
-            style={styles.card}
-            onClick={() =>
-              window.open(
-                "https://wa.me/6285702088994?text=Halo%2C+saya+perlu+Jasa+Ketik+dan+Tulisan+Tangan",
-                "_blank"
-              )
-            }
-          >
-            📝 Joki jasa ketik dan tulisan tangan
-          </button>
-          <button
-            style={styles.card}
-            onClick={() =>
-              window.open(
-                "https://wa.me/6285702088994?text=Halo%2C+saya+mau+jasa+pengecekan+Turnitin+dan+parafrase",
-                "_blank"
-              )
-            }
-          >
-            🔍 joki pengecekatan turnitin dan edit parafrase
-          </button>
+          {[
+            { text: '📘 Joki Tugas Harian', msg: 'Halo%2C+saya+ingin+pakai+Joki+Tugas+Harian' },
+            { text: '✏️ Joki Penulisan Laporan & Editing', msg: 'Halo%2C+saya+butuh+Joki+Penulisan+Laporan+dan+Editing' },
+            { text: '💻 Joki Coding & Proyek IT', msg: 'Halo%2C+saya+ingin+pakai+Joki+Coding+%26+Proyek+IT' },
+            { text: '📝 Joki jasa ketik dan tulisan tangan', msg: 'Halo%2C+saya+perlu+Jasa+Ketik+dan+Tulisan+Tangan' },
+            { text: '🔍 joki pengecekatan turnitin dan edit parafrase', msg: 'Halo%2C+saya+mau+jasa+pengecekan+Turnitin+dan+parafrase' }
+          ].map((item, index) => (
+            <button
+              key={index}
+              style={styles.card}
+              onClick={() => window.open(`https://wa.me/6285702088994?text=${item.msg}`, '_blank')}
+            >
+              {item.text}
+            </button>
+          ))}
         </div>
       </section>
 
@@ -113,18 +87,16 @@ const Homepage = () => {
       <section style={styles.testimonialSection}>
         <h2 style={styles.sectionTitle}>Apa Kata Mereka</h2>
         <div style={styles.testimonialContainer}>
-          <div style={styles.testimonialCard}>
-            <p style={styles.testimonialText}>“Pelayanan super cepat dan hasilnya memuaskan banget. Nggak nyangka bisa selesai dalam sehari!”</p>
-            <p style={styles.testimonialAuthor}>— Rina, Mahasiswi Teknik</p>
-          </div>
-          <div style={styles.testimonialCard}>
-            <p style={styles.testimonialText}>“Codingan gue error mulu, tapi tim Gaspoll langsung bantu dan beres. Worth it banget!”</p>
-            <p style={styles.testimonialAuthor}>— Fajar, Informatika</p>
-          </div>
-          <div style={styles.testimonialCard}>
-            <p style={styles.testimonialText}>“Udah dua kali pake jasa ini buat laporan akhir. Selalu profesional dan rapi.”</p>
-            <p style={styles.testimonialAuthor}>— Sari, Akuntansi</p>
-          </div>
+          {[
+            { text: '“Pelayanan super cepat dan hasilnya memuaskan banget. Nggak nyangka bisa selesai dalam sehari!”', author: '— Rina, Mahasiswi Teknik' },
+            { text: '“Codingan gue error mulu, tapi tim Gaspoll langsung bantu dan beres. Worth it banget!”', author: '— Fajar, Informatika' },
+            { text: '“Udah dua kali pake jasa ini buat laporan akhir. Selalu profesional dan rapi.”', author: '— Sari, Akuntansi' }
+          ].map((item, index) => (
+            <div key={index} style={styles.testimonialCard}>
+              <p style={styles.testimonialText}>{item.text}</p>
+              <p style={styles.testimonialAuthor}>{item.author}</p>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -143,7 +115,6 @@ const styles = {
     color: '#0b1d3a',
     margin: 0,
     padding: 0,
-    overflowX: 'hidden',
   },
   whatsappButton: {
     position: 'fixed',
@@ -159,17 +130,16 @@ const styles = {
     boxShadow: '0 4px 10px rgba(0,0,0,0.2)',
   },
   navbar: {
-  display: 'flex',
-  justifyContent: 'space-between',
-  alignItems: 'center',
-  padding: '16px 24px',
-  backgroundColor: '#ffffff',
-  color: '#0b1d3a',
-  position: 'sticky',
-  top: 0,
-  zIndex: 999, // lebih tinggi agar di atas elemen lain
-  boxShadow: '0 2px 6px rgba(0,0,0,0.05)',
-},
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: '16px 24px',
+    backgroundColor: '#ffffff',
+    color: '#0b1d3a',
+    position: 'sticky',
+    top: 0,
+    zIndex: 999,
+  },
   logo: {
     fontSize: '1.5rem',
     fontWeight: 'bold',
@@ -237,6 +207,7 @@ const styles = {
     fontWeight: 500,
     transition: '0.3s',
     color: '#0b1d3a',
+    cursor: 'pointer',
   },
   cta: {
     padding: '60px 20px',
