@@ -23,7 +23,16 @@ const Homepage = () => {
       >
         💬
       </a>
-
+      {/* Menu */}
+      <div style={styles.socialBar}>
+      <a href="https://instagram.com/gaspolljokk" target="_blank" rel="noopener noreferrer" style={styles.socialIcon}>
+        📸 instagram
+      </a>
+      <a href="https://wa.me/6285702088994" target="_blank" rel="noopener noreferrer" style={styles.socialIcon}>
+        💬 WhatsApp
+      </a>
+     
+    </div>
       {/* Navbar */}
       <nav style={{
         ...styles.navbar,
@@ -39,49 +48,88 @@ const Homepage = () => {
       </nav>
 
       {/* Hero */}
-      <section style={styles.hero}>
-        <h1 style={styles.heroTitle}>
-          <Typewriter
-            words={['Tugas Menumpuk?', 'Pusing?', 'Pengin Cepat Selesai?', 'Tapi Mager?', 'Gaspoll Aja!', 'Cepat, Amanah, dan Terpercaya!']}
-            loop
-            cursor
-            cursorStyle="_"
-            typeSpeed={70}
-            deleteSpeed={50}
-            delaySpeed={1500}
-          />
-        </h1>
-        <p style={styles.heroText}>Kami siap membantu tugas kuliah, coding, laporan, hingga editing</p>
-        <a href="#pesan" style={styles.ctaButton}>Pesan Sekarang</a>
-      </section>
+   <section style={styles.hero}>
+  <div style={styles.heroContent}>
+    <div style={styles.heroTextContainer}>
+      <h3>#Gassjok</h3>
+      <h1 style={styles.heroTitle}>
+        <Typewriter
+          words={['Tugas Menumpuk?', 'Pusing?', 'Pengin Cepat Selesai?', 'Tapi Mager?', 'Gaspoll Aja!', 'Cepat, Amanah, dan Terpercaya!']}
+          loop
+          cursor
+          cursorStyle="_"
+          typeSpeed={70}
+          deleteSpeed={50}
+          delaySpeed={1500}
+        />
+      </h1>
+      <p style={styles.heroText}>Kami siap membantu tugas kuliah, coding, laporan, hingga editing</p>
+     <a
+  href="https://wa.me/6285702088994?text=Halo%2C+saya+ingin+konsultasi+tentang+jasa+joki+kampus"
+  target="_blank"
+  rel="noopener noreferrer"
+  style={styles.ctaButton}
+>
+  Konsultasi Sekarang
+</a>
+    </div>
+    <div style={styles.heroImage}>
+      <img
+        src="/benner2.png" // Ganti dengan nama gambar kamu
+        alt="Ilustrasi Joki Kampus"
+        style={{ width: '100%', maxWidth: 1000, borderRadius: '12px' }}
+      />
+    </div>
+  </div>
+</section>
+
 
       {/* Layanan */}
       <section style={styles.services} id="layanan">
-        <h2 style={styles.sectionTitle}>💼 Layanan Kami</h2>
-        <div style={styles.cardContainer}>
-          {[
-            { text: '📘 Joki Tugas Harian', msg: 'Halo%2C+saya+ingin+pakai+Joki+Tugas+Harian' },
-            { text: '✏️ Joki Penulisan Laporan & Editing', msg: 'Halo%2C+saya+butuh+Joki+Penulisan+Laporan+dan+Editing' },
-            { text: '💻 Joki Coding & Proyek IT', msg: 'Halo%2C+saya+ingin+pakai+Joki+Coding+%26+Proyek+IT' },
-            { text: '📝 Joki jasa ketik dan tulisan tangan', msg: 'Halo%2C+saya+perlu+Jasa+Ketik+dan+Tulisan+Tangan' },
-            { text: '🔍 joki pengecekatan turnitin dan edit parafrase', msg: 'Halo%2C+saya+mau+jasa+pengecekan+Turnitin+dan+parafrase' }
-          ].map((item, index) => (
-            <button
-              key={index}
-              style={styles.card}
-              onClick={() => window.open(`https://wa.me/6285702088994?text=${item.msg}`, '_blank')}
-            >
-              {item.text}
-            </button>
-          ))}
-        </div>
-      </section>
+  <h2 style={styles.sectionTitle}>💼 Layanan Kami</h2>
+  <div style={styles.cardContainer}>
+    {[
+      {
+        title: '📘 Joki Tugas Harian',
+        description: 'Kami bantu tugas-tugas harian kuliah agar kamu bisa lebih fokus ke hal penting lainnya.',
+        msg: 'Halo%2C+saya+ingin+pakai+Joki+Tugas+Harian'
+      },
+      {
+        title: '✏️ Laporan & Editing',
+        description: 'Butuh bantuan penulisan laporan, makalah, atau sekadar proofreading dan editing? Kami siap!',
+        msg: 'Halo%2C+saya+butuh+Joki+Penulisan+Laporan+dan+Editing'
+      },
+      {
+        title: '💻 Coding & Proyek IT',
+        description: 'Bingung ngerjain tugas coding atau skripsi berbasis IT? Kami punya tim IT yang siap bantu.',
+        msg: 'Halo%2C+saya+ingin+pakai+Joki+Coding+%26+Proyek+IT'
+      },
+      {
+        title: '📝 Ketik & Tulisan Tangan',
+        description: 'Kami juga menerima jasa pengetikan dokumen dan tugas tulisan tangan yang rapi.',
+        msg: 'Halo%2C+saya+perlu+Jasa+Ketik+dan+Tulisan+Tangan'
+      },
+      {
+        title: '🔍 Turnitin & Parafrase',
+        description: 'Cek plagiarisme via Turnitin dan bantu parafrase agar aman dan bebas duplikat.',
+        msg: 'Halo%2C+saya+mau+jasa+pengecekan+Turnitin+dan+parafrase'
+      }
+    ].map((item, index) => (
+      <div key={index} style={styles.card}>
+        <h3 style={styles.cardTitle}>{item.title}</h3>
+        <p style={styles.cardDesc}>{item.description}</p>
+        <button
+          style={styles.cardButton}
+          onClick={() => window.open(`https://wa.me/6285702088994?text=${item.msg}`, '_blank')}
+        >
+          Chat via WhatsApp
+        </button>
+      </div>
+    ))}
+  </div>
+</section>
 
-      {/* CTA */}
-      <section style={styles.cta} id="pesan">
-        <h2 style={styles.sectionTitle}>Siap Gaspoll?</h2>
-        <p style={{ marginBottom: 30 }}>Klik tombol emot 💬 untuk pesan atau konsultasi lewat WhatsApp</p>
-      </section>
+
 
       {/* Testimoni */}
       <section style={styles.testimonialSection}>
@@ -129,6 +177,24 @@ const styles = {
     zIndex: 1000,
     boxShadow: '0 4px 10px rgba(0,0,0,0.2)',
   },
+ socialBar: {
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  gap: '20px',
+  padding: '10px 0',
+  backgroundColor: '#ffffff',
+  color: '#0b1d3a',
+  fontSize: '0.95rem',
+  borderBottom: '2px solid #e0e0e0',
+},
+socialIcon: {
+  color: '#0b1d3a',
+  textDecoration: 'none',
+  fontWeight: 500,
+  transition: 'color 0.3s ease',
+  padding: '4px 8px',
+},
   navbar: {
     display: 'flex',
     justifyContent: 'space-between',
@@ -159,21 +225,39 @@ const styles = {
     fontSize: '1rem',
   },
   hero: {
-    padding: '80px 20px',
-    textAlign: 'center',
-    backgroundColor: '#ffffff',
-  },
-  heroTitle: {
-    fontSize: '2rem',
-    fontWeight: 'bold',
-    minHeight: '60px',
-    color: '#0b1d3a',
-  },
-  heroText: {
-    fontSize: '1rem',
-    color: '#0b1d3a',
-    margin: '20px 0',
-  },
+  padding: '10px 5px',
+  backgroundColor: '#f9f9f9',
+  color: '#0b1d3a',
+},
+heroContent: {
+  display: 'flex',
+  flexDirection: 'row',
+  alignItems: 'center',
+  justifyContent: 'space-between',
+  flexWrap: 'wrap',
+  maxWidth: 1200,
+  margin: '0 auto',
+  gap: '30px',
+},
+heroTextContainer: {
+  flex: '1 1 300px',
+},
+heroImage: {
+  flex: '1 1 300px',
+  display: 'flex',
+  justifyContent: 'center',
+},
+heroTitle: {
+  fontSize: '4rem',
+  fontWeight: 'bold',
+  minHeight: '60px',
+  marginBottom: '20px',
+},
+heroText: {
+  fontSize: '1rem',
+  marginBottom: '20px',
+},
+
   ctaButton: {
     backgroundColor: '#0b1d3a',
     color: '#fff',
